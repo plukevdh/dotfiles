@@ -89,6 +89,7 @@ function ruby_or_irb() {
   fi
 }
 alias ruby=ruby_or_irb
+alias coffee-build='coffee -wclo build src'
 alias r=rails
 alias git=hub
 alias :e=vim
