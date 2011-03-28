@@ -35,7 +35,7 @@ zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 # zmodload -ap zsh/mapfile mapfile
 
-
+JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
 PATH="~/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
