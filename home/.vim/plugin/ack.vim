@@ -6,7 +6,7 @@
 " With MacPorts:
 "   sudo port install p5-app-ack
 
-let g:ackprg="ack\\ -H\\ --nocolor\\ --nogroup"
+let g:ackprg="ack\\ -H\\ --nogroup\\ --ignore-dir=coverage\\ --ignore-dir=public/javascript/vendor"
 
 function! Ack(args)
     let grepprg_bak=&grepprg

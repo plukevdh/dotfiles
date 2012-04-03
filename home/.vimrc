@@ -1,13 +1,19 @@
 syntax enable
 filetype off
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
+au BufNewFile,BufRead *.rabl set filetype=ruby
 au BufNewFile,BufRead *.citrus set filetype=citrus
+au BufRead,BufNewFile *.go set filetype=go
 
-colorscheme railscasts
+set background=dark
+colorscheme solarized
 
 runtime macros/matchit.vim
+set clipboard=unnamed
+
+set scrolloff=3
 
 "no VI compatability
 set nocompatible
@@ -42,6 +48,7 @@ set smartcase
 
 set number
 set ruler
+set laststatus=2
 
 "folding settings
 set foldnestmax=10
@@ -55,6 +62,7 @@ let mapleader = ","
 map Y y$
 
 "tab settings
+map <Leader>tt :tabnew<cr>
 map <Leader>tt :tabnew<cr>
 map <Leader>te :tabedit
 map <Leader>tc :tabclose<cr>
@@ -73,15 +81,6 @@ vmap <S-Tab> <gv
 set nobackup
 set nowritebackup
 
-
-"NERDTree
-map <silent> <Leader>ntn :NERDTree<cr>
-map <silent> <Leader>ntt :NERDTreeToggle<cr>
-map <silent> <Leader>ntc :NERDTreeClose<cr>
-
-let g:rubytest_cmd_test = "rake %p"
-let g:rubytest_cmd_testcase = "rake %p -n '/%c/'"
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -99,21 +98,14 @@ set noerrorbells         " don't beep
 set pastetoggle=<F2>
 nmap <silent> ,/ :nohlsearch<CR>
 
-noremap ; :
 cmap w!! w !sudo tee % >/dev/null
 
 " Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <C-o> <C-w>o
-
-" navigation while in insert
-imap <C-h> <C-o>h
-imap <C-j> <C-o>j
-imap <C-k> <C-o>k
-imap <C-l> <C-o>l
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
+" map <C-o> <C-w>o
 
 " cleanup shortcut F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
@@ -123,8 +115,43 @@ vmap D y'>p
 
 " Edit routes
 command! Rroutes :Redit config/routes.rb
-command! RTroutes :RTedit config/routes.rb
 
-let NERDTreeMapActivateNode="<Space>"
+cmap <silent> syn %s/:\([a-z_][a-z0-9_]*\) =>/\1:/g
+autocmd BufWritePre * :%s/\s\+$//e
 
-let coffe_compile_on_save = 1
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+"ruby autocomplete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+
+"command-t help
+map <leader>p :CommandT<cr>
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+map <leader>gg :topleft 40 :split Gemfile<cr>
+map <leader>gr :topleft 40 :split config/routes.rb<cr>
+
+map <leader><leader> <C-^>
+
+"Gist stuff
+let g:github_token = 'b9433a77479dfbefacf4b65c82a96357'
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_private = 1
+
+
+
