@@ -1,7 +1,7 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/hungerandthirst/Code/Projects/crunchy/echo/src'
-let g:netrw_dirhist_2='/Users/hungerandthirst/Code/Projects/crunchy/echo/src/lib'
-let g:netrw_dirhist_3='/Users/hungerandthirst/Code/Projects/crunchy/crunch'
-let g:netrw_dirhist_4='/Users/hungerandthirst/Code/Projects/crunchy/crunch/tmp'
-let g:netrw_dirhist_5='/Users/hungerandthirst/Code/Projects/crunchy/crunch/tmp/cache'
+let g:netrw_dirhist_1='/Users/hungerandthirst/Code/Projects/crunchy/screen_streamer/.git'
+let g:netrw_dirhist_2='/Users/hungerandthirst/Code/Projects/crunchy/crunch'
+let g:netrw_dirhist_3='/Users/hungerandthirst/Code/Projects/crunchy/crunch/app'
+let g:netrw_dirhist_4='/Users/hungerandthirst/Code/Projects/crunchy/crunch/app/assets'
+let g:netrw_dirhist_5='/Users/hungerandthirst/Code/Projects/crunchy/crunch/app/assets/javascripts'

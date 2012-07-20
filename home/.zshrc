@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="alanpeabody"
+export ZSH_THEME="sunaku"
 
 plugins=(rails3 bundler git git-flow)
 source $ZSH/oh-my-zsh.sh
@@ -13,6 +13,7 @@ bindkey -e
 
 COMPLETION_WAITING_DOTS=true
 JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
+export JRUBY_OPTS=--1.9
 PATH="~/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
@@ -22,7 +23,7 @@ HOSTNAME="`hostname`"
 PAGER='less'
 
 alias edit=subl
-export EDITOR=subl
+export EDITOR="subl -w"
 
 #LANGUAGE=
 LC_ALL='en_US.UTF-8'
