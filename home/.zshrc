@@ -14,7 +14,7 @@ bindkey -e
 COMPLETION_WAITING_DOTS=true
 JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
 export JRUBY_OPTS=--1.9
-PATH="~/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
+PATH="~/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:~/.gem/ruby/1.9.1/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
