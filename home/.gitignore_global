@@ -1,6 +1,10 @@
 .tags*
 *.sublime*
 .rspec
+build/
+
+.cookbooks
+.chef
 
 # Compiled source #
 ###################

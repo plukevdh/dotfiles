@@ -1,7 +1,9 @@
 syntax enable
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype plugin indent on
+
+let g:Powerline_symbols = 'fancy'
 
 au BufNewFile,BufRead *.rabl set filetype=ruby
 au BufNewFile,BufRead *.citrus set filetype=citrus
@@ -17,6 +19,7 @@ set scrolloff=3
 
 "no VI compatability
 set nocompatible
+set encoding=utf-8
 
 "cmd showing
 set showcmd
@@ -80,13 +83,11 @@ vmap <S-Tab> <gv
 "backup/swapfiles
 set nobackup
 set nowritebackup
+set noswapfile
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-set nobackup
-set noswapfile
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -99,16 +100,6 @@ set pastetoggle=<F2>
 nmap <silent> ,/ :nohlsearch<CR>
 
 cmap w!! w !sudo tee % >/dev/null
-
-" Easy window navigation
-" map <C-h> <C-w>h
-" map <C-j> <C-w>j
-" map <C-k> <C-w>k
-" map <C-l> <C-w>l
-" map <C-o> <C-w>o
-
-" cleanup shortcut F5
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
 " copy past below w/ D
 vmap D y'>p

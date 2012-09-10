@@ -1,13 +1,14 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="sunaku"
 
-plugins=(rails3 bundler git git-flow)
+plugins=(rails3 bundler git passenger)
 source $ZSH/oh-my-zsh.sh
+source ~/.crunch_helpers
 
 # Set/unset  shell options
 unsetopt auto_name_dirs # FIX RVM
 unsetopt correct correctall
-setopt histnostore histignoredups
+setopt histnostore histignoredups auto_cd
 
 bindkey -e
 
@@ -22,8 +23,11 @@ SAVEHIST=1000
 HOSTNAME="`hostname`"
 PAGER='less'
 
-alias edit=subl
-export EDITOR="subl -w"
+# alias edit=subl
+# export EDITOR="subl -w"
+
+alias edit=vim
+export EDITOR=edit
 
 #LANGUAGE=
 LC_ALL='en_US.UTF-8'

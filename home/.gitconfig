@@ -18,12 +18,11 @@
 	tool = Kaleidoscope
 [core]
 	excludesfile = /Users/hungerandthirst/.gitignore_global
-	editor = subl -w
+	editor = vim # subl -w
 [color]
 	ui = true
 [alias]
 	l = "!source ~/.githelpers && pretty_git_log"
-[merge]
-	conflictstyle = diff3
+	cleanup = "!source ~/.githelpers && cleanup_git_branches"
 [rerere]
 	enabled = 1
