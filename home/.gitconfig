@@ -11,14 +11,14 @@
 	token = b9433a77479dfbefacf4b65c82a96357
 	user = plukevdh
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
 [diff]
 	tool = Kaleidoscope
 [core]
 	excludesfile = /Users/hungerandthirst/.gitignore_global
-	editor = vim # subl -w
+	editor = subl -w
 [color]
 	ui = true
 [alias]
@@ -26,3 +26,9 @@
 	cleanup = "!source ~/.githelpers && cleanup_git_branches"
 [rerere]
 	enabled = 1
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope

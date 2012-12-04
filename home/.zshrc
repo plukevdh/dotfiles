@@ -3,10 +3,8 @@ export ZSH_THEME="sunaku"
 
 plugins=(rails3 bundler git passenger)
 source $ZSH/oh-my-zsh.sh
-source ~/.crunch_helpers
 
 # Set/unset  shell options
-unsetopt auto_name_dirs # FIX RVM
 unsetopt correct correctall
 setopt histnostore histignoredups auto_cd
 
@@ -14,8 +12,8 @@ bindkey -e
 
 COMPLETION_WAITING_DOTS=true
 JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
-export JRUBY_OPTS=--1.9
-PATH="~/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:~/.gem/ruby/1.9.1/bin:$PATH"
+export JRUBY_OPTS="--1.9"
+PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
@@ -23,16 +21,16 @@ SAVEHIST=1000
 HOSTNAME="`hostname`"
 PAGER='less'
 
-# alias edit=subl
-# export EDITOR="subl -w"
+alias edit=subl
+export EDITOR="subl -w"
 
-alias edit=vim
-export EDITOR=edit
+# alias edit=vim
+# export EDITOR=edit
 
 #LANGUAGE=
 LC_ALL='en_US.UTF-8'
 LANG='en_US.UTF-8'
-LC_CTYPE=C
+LC_CTYPE='en_US.UTF-8'
 
 FLEX_HOME='~/Code/Flex/flex_sdk_3.4.1'
 
@@ -52,5 +50,7 @@ FLEX_HOME='~/Code/Flex/flex_sdk_3.4.1'
 # zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"  # This loads RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+fpath=(/usr/local/share/zsh-completions $fpath)
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+
+eval "$(rbenv init -)"

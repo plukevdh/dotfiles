@@ -2,6 +2,8 @@
 *.sublime*
 .rspec
 build/
+.powrc
+.gems
 
 .cookbooks
 .chef
