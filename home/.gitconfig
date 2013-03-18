@@ -17,8 +17,10 @@
 [diff]
 	tool = Kaleidoscope
 [core]
-	excludesfile = /Users/hungerandthirst/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = subl -w
+	autocrlf = false
+	ignorecase = true
 [color]
 	ui = true
 [alias]
@@ -28,7 +30,10 @@
 	enabled = 1
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [mergetool]
 	prompt = false
 [merge]
 	tool = Kaleidoscope
+[credential]
+	helper = osxkeychain

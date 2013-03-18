@@ -4,6 +4,7 @@
 build/
 .powrc
 .gems
+.bundle
 
 .cookbooks
 .chef

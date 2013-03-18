@@ -12,13 +12,8 @@ bindkey -e
 
 COMPLETION_WAITING_DOTS=true
 JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
-<<<<<<< Updated upstream
-export JRUBY_OPTS="--1.9"
-PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
-=======
-export JRUBY_OPTS=--1.9
+JRUBY_OPTS="--1.9"
 PATH="$HOME/.rbenv/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
->>>>>>> Stashed changes
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
@@ -26,15 +21,14 @@ SAVEHIST=1000
 HOSTNAME="`hostname`"
 PAGER='less'
 
-<<<<<<< Updated upstream
-alias edit=subl
-=======
 alias edit="subl"
->>>>>>> Stashed changes
 export EDITOR="subl -w"
 
 # alias edit=vim
 # export EDITOR=edit
+
+# git go: https://github.com/pengwynn/dotfiles/blob/master/bin/git-go
+GH_LOGIN=plukevdh
 
 #LANGUAGE=
 LC_ALL='en_US.UTF-8'
@@ -59,14 +53,10 @@ FLEX_HOME='~/Code/Flex/flex_sdk_3.4.1'
 # zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-<<<<<<< Updated upstream
 fpath=(/usr/local/share/zsh-completions $fpath)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
-
-eval "$(rbenv init -)"
-=======
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"  # This loads RVM into a shell session.
-
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"
->>>>>>> Stashed changes
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
