@@ -55,8 +55,9 @@ FLEX_HOME='~/Code/Flex/flex_sdk_3.4.1'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
-eval "$(rbenv init -)"
 eval "$(hub alias -s)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
