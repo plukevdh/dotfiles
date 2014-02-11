@@ -1,8 +1,11 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="sunaku"
 
-plugins=(rails3 bundler git passenger)
+plugins=(bundler git passenger)
 source $ZSH/oh-my-zsh.sh
+
+source $HOME/.githelpers
+source $HOME/.generic_helpers
 
 # Set/unset  shell options
 unsetopt correct correctall auto_name_dirs
@@ -12,8 +15,8 @@ bindkey -e
 
 COMPLETION_WAITING_DOTS=true
 JRUBY_INVOCATION="$(readlink "$(which celerity_jruby)")"
-JRUBY_OPTS="--1.9"
-RBXOPT=-X19
+export JRUBY_OPTS=--2.0
+export RBXOPT=-X19
 PATH="$HOME/.rbenv/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
@@ -38,7 +41,6 @@ LC_CTYPE='en_US.UTF-8'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
-eval "$(hub alias -s)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
