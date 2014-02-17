@@ -1,1 +1,10 @@
+# Bundler
+alias be='bundle exec'
+alias bi='bundle install'
+alias b='bundle'
 
+# Editor
+alias edit="subl"
+
+# Generic
+alias ll="ls -la"
