@@ -8,3 +8,9 @@ alias edit="subl"
 
 # Generic
 alias ll="ls -la"
+
+# Git
+alias gp="git push"
+alias gl="git pull"
+alias gco="git checkout"
+alias gsp="git stash; git pull; git stash pop"

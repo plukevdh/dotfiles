@@ -12,6 +12,8 @@ compinit
 
 bindkey -e
 
+PROMPT="%~ "
+
 COMPLETION_WAITING_DOTS=true
 export JRUBY_OPTS=--2.0
 export RBXOPT=-X19
