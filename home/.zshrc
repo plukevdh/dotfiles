@@ -12,11 +12,12 @@ compinit
 
 bindkey -e
 
-PROMPT="%~ "
+PROMPT="%m:%~> "
 
 COMPLETION_WAITING_DOTS=true
 export JRUBY_OPTS=--2.0
 export RBXOPT=-X19
+export DOCKER_HOST=tcp://127.0.0.1:4243
 PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/npm/bin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zsh_history

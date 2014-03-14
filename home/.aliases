@@ -1,6 +1,7 @@
 # Bundler
 alias be='bundle exec'
 alias bi='bundle install'
+alias bu='bundle update'
 alias b='bundle'
 
 # Editor
